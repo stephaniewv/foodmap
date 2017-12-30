@@ -6,10 +6,221 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>foodmap</title>
   <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+
+
 </head>
 
 <body>
+  <header>
+    <div class="container main-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="foodmap">Foodmap</h1>
+          <div class="cont-cuadrado col-xs-12">
+            <div class="cuadrado"></div>
+            <div class="linea"></div>
+            <div class="cuadrado"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+            <img src="assets/images/map.png" class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <select class="form-control">
+            <option value="">Distrito</option>
+            <option value="Ancón">Ancón</option>
+            <option value="Ate">Ate</option>
+            <option value="Barranco">Barranco</option>
+            <option value="Bellavista">Bellavista</option>
+            <option value="Breña">Breña</option>
+            <option value="Callao">Callao</option>
+            <option value="Carabayllo">Carabayllo</option>
+            <option value="Carmen de la Legua">Carmen de la Legua</option>
+            <option value="Chaclacayo">Chaclacayo</option>
+            <option value="Chorrillos">Chorrillos</option>
+            <option value="Chosica">Chosica</option>
+            <option value="Cieneguilla">Cieneguilla</option>
+            <option value="Comas">Comas</option>
+            <option value="El Agustino">El Agustino</option>
+            <option value="Independencia">Independencia</option>
+            <option value="Jesús María">Jesús María</option>
+            <option value="La Molina">La Molina</option>
+            <option value="La Perla">La Perla</option>
+            <option value="La Punta">La Punta</option>
+            <option value="La Victoria">La Victoria</option>
+            <option value="Lima">Lima</option>
+            <option value="Lince">Lince</option>
+            <option value="Los Olivos">Los Olivos</option>
+            <option value="Lurin">Lurin</option>
+            <option value="Magdalena del Mar">Magdalena del Mar</option>
+            <option value="Miraflores">Miraflores</option>
+            <option value="Pueblo Libre">Pueblo Libre</option>
+            <option value="Puente Piedra">Puente Piedra</option>
+            <option value="Rimac">Rimac</option>
+            <option value="San Borja">San Borja</option>
+            <option value="San Isidro">San Isidro</option>
+            <option value="San Juan de Lurigancho">San Juan de Lurigancho</option>
+            <option value="San Juan de Miraflores">San Juan de Miraflores</option>
+            <option value="San Luis">San Luis</option>
+            <option value="San Martín de Porres">San Martín de Porres</option>
+            <option value="San Miguel">San Miguel</option>
+            <option value="Santa Anita">Santa Anita</option>
+            <option value="Santiago de Surco">Santiago de Surco</option>
+            <option value="Surquillo">Surquillo</option>
+            <option value="Ventanilla">Ventanilla</option>
+            <option value="Villa María del Triunfo">Villa María del Triunfo</option>
+            <option value="Villa el Salvador">Villa el Salvador</option>
+          </select>
+        </div>
+        <div class="col-xs-6">
+          <select class="form-control">
+            <option selected="" id="categoria-todas">Categoría</option>
+            <option value="/lima/cafeterias-y-bagueterias">Cafeterías y Bagueterías</option>
+            <option value="/lima/carnes-y-parrillas">Carnes y Parrillas</option>
+            <option value="/lima/cevicherias">Cevicherías</option>
+            <option value="/lima/chifas">Chifas</option>
+            <option value="/lima/comida-criolla">Comida Criolla</option>
+            <option value="/lima/comida-internacional">Comida Internacional</option>
+            <option value="/lima/comida-japonesa">Comida Japonesa</option>
+            <option value="/lima/comida-peruana">Comida Peruana</option>
+            <option value="/lima/desayunos">Chicharronerías</option>
+            <option value="/lima/empanadas">Empanadas</option>
+            <option value="/lima/hamburguesas-y-salchipapas">Hamburguesas y Salchipapas</option>
+            <option value="/lima/licores-y-cervezas">Licores y Cervezas</option>
+            <option value="/lima/pizzas">Pizzas</option>
+            <option value="/lima/polleria">Pollerías</option>
+            <option value="/lima/postres-y-helados">Postres y Helados</option>
+            <option value="/lima/saludable-ensaladas-y-vegetariana">Saludable, Ensaladas y Vegetariana</option>
+            <option value="/lima/sangucherias">Sangucherías</option>
+            <option value="/lima/sushi-makis">Sushi / Makis</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 search">
+          <button type="submit" class="btn btn-default">Buscar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-10" id="listado_rest">
+          <ul class="resultado_filtro">
+            <li class="contenido_carta">
+              <div class="col-xs-4 col-sm-2">
+                <div class="logo_img">
+                  <img src="" alt="">
+                </div>
+              </div>
+              <div class="col-md-6 col-xs-8 col-sm-10 contenido_titulo">
+                <div class="row">
+                  <div class="col-md-12"></div>
+                <div class="row raiting">
+                  <div class="star"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 contenido_categoria">Camida china</div>
+                </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 
+    <form action="/lima/buscar" id="Buscar" class="buscar-form form-inline" method="get" accept-charset="utf-8">
+      <div class="form-group div-dir2" style="width: 38%;">
+        <input name="dir2" class="form-control" id="dir2" placeholder="Dirección" value="" display="1" style="" type="text">
+      </div>
+      <div class="form-group div-dir3" style="width: 28%;">
+        <select name="dir3" class="form-control" id="dir3" order="value" style="">
+
+
+        </select>
+      </div>
+      <input type="hidden" name="lat" div="form-group div-lat width: 28%;" class="form-control" id="lat" style="">
+      <input type="hidden" name="lng" div="form-group div-lng width: 28%;" class="form-control" id="lng" style="">
+      <input type="hidden" name="readable" div="form-group div-readable width: 28%;" class="form-control" id="readable" style="">
+      <input type="hidden" name="direccion" div="form-group div-direccion width: 28%;" class="form-control" id="direccion"
+        value="{{dir2}} {{dir3}}" style="">
+      <input type="hidden" name="barrio" div="form-group div-barrio width: 28%;" class="form-control" id="barrio" value=""
+        style="">
+      <input value="Buscar" class="button green btn btn-success" type="submit">
+    </form>
+ -->
+
+
+
+  <!--     
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Comida cerca de ti</h2>
+          <div id="custom-search-input">
+            <div class="input-group col-xs-12">
+              <input type="text" class="form-control input-lg" placeholder="Buscar" />
+              <span class="input-group-btn">
+                <button class="btn btn-info btn-lg" type="button">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container container-picture">
+      <div class="row">
+        <div class="col-xs-6">
+          <img src="assets/images/foto1.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col-xs-6">
+          <img src="assets/images/foto2.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <img src="assets/images/foto3.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col-xs-6">
+          <img src="assets/images/foto4.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+    </div> -->
+
+  </section>
+  </header>
+
+
 
   <script src="vendors/js/jquery.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
